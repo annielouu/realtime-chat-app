@@ -20,9 +20,11 @@ git clone https://github.com/annielouu/realtime-chat-app.git
 cd realtime-chat-app
 ```
 2. Install Dependencies
+
 ```npm install```
 
 3. Set Up Environment Variables
+
 Create a new application on your [Pusher Dashboard](http://bit.ly/pusher-dashboard) to get application credentials. Then, create a `.env` file in the root directory of this application and add your application credentials as follows.
 ```bash
 PUSHER_APP_ID=YOUR_APP_ID
