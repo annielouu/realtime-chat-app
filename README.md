@@ -1,4 +1,4 @@
-# Real-time Chat App with Sentiment Analysis
+# Realtime Chat App with Sentiment Analysis
 This chat application enables realtime communication between users. It uses React for the frontend, Next.js and Express for the backend, and Pusher for handling real-time functionality. Additionally, the app uses the `sentiment` npm module to perform sentiment analysis on each message sent by users.
 
 ## Features
