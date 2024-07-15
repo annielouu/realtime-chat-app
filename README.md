@@ -14,19 +14,19 @@ Before you begin, make sure you have the following installed:
 
 ## Installation
 Follow these steps to get your development environment set up:
-1. Clone the Repo
+1. **Clone the Repo**
 
 First, clone this repo to your local machine and navigate to its root directory:
 ```bash
 git clone https://github.com/annielouu/realtime-chat-app.git
 cd realtime-chat-app
 ```
-2. Install Dependencies
+2. **Install Dependencies**
 
 Run the command below to install the dependencies you need:
 ```npm install```
 
-3. Set Up Environment Variables
+3. **Set Up Environment Variables**
 
 [Pusher](https://pusher.com) enables the realtime functionalities of this app. You would need to create a new application on your [Pusher Dashboard](http://bit.ly/pusher-dashboard) to get your application credentials. Then, create a `.env` file in the root directory of this app and add your credentials like this:
 ```bash
@@ -37,7 +37,7 @@ PUSHER_APP_ID=YOUR_APP_ID
 ```
 Remember to replace `YOUR_APP_ID`, `YOUR_APP_KEY`, etc., with the credentials from the Pusher dashboard.
 
-4. Start the application with the following command:
+4. **Start the application with the following command:**
 ```bash
 npm run dev
 ```
