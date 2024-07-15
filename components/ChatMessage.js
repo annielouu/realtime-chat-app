@@ -15,7 +15,7 @@ function ChatMessage(props) {
     return <div className={`w-100 my-1 d-flex ${justify}`}>
         <div className="bg-light rounded border border-gray p-2" style={messageBoxStyles}>
             <span className={`d-block text-secondary ${align}`} style={messageBoxStyles}>
-                {message}
+                {props.message}
             </span>
         </div>
     </div>

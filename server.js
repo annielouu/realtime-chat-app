@@ -34,22 +34,22 @@ app.prepare()
         server.use(bodyParser.json());
         server.use(bodyParser.urlencoded({ extended: true }));
 
-        server.get('*', (req, res) => {
+        server.get('*', (req, res) => { // for all GET requests not caught by other routes, pass them to Next.js's handler
             return handler(req, res);
         });
 
         const chatHistory = { messages: [] };
 
-        server.post('/message', (req, res, next) => {
+        server.post('/message', (req, res) => {
             const { user = null, content = '', timestamp = +new Date() } = req.body; // Extracts user, content, timestamp from request body
             const sentimentScore = sentiment.analyze(content).score; // Analyze sentiment of content
             const message = { user, content, timestamp, sentiment: sentimentScore }; // Construct new message object with sentiment
-            chatHistory.push(message); // Push this message to chat history
+            chatHistory.messages.push(message); // Push this message to chat history
             pusher.trigger('chat-room', 'new-message', message); // Trigger the 'new-message' event in 'chat-room' channel
         });
 
-        server.post('/messages', (req, res, next) => {
-            res.json({ ...chatHistory, status: 'success' });
+        server.post('/messages', (req, res) => {
+            res.json({ messages: chatHistory.messages, status: 'success' });
         });
 
         server.listen(port, err => {
