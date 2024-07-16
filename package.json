@@ -24,6 +24,7 @@
     "pusher-js": "^8.4.0-rc2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sentiment": "^5.0.2"
+    "sentiment": "^5.0.2",
+    "vader-sentiment": "^1.1.3"
   }
 }
