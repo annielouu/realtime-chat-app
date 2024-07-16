@@ -69,9 +69,7 @@ During testing, `sentiment` outperforms `vader-sentiment` in emoji analysis. Her
 content | compound score (`vader-sentiment`) | score (`sentiment`)
 --- | --- | ---
 😭 | 0 | -1 
---- | --- | ---
 i don't know 😭 | 0 | -1
---- | --- | ---
 😂 | 0 | 1
 
 ### Alternative Choice: Integrating Vader-Sentiment
