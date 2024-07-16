@@ -62,7 +62,7 @@ npm run dev
 
 The app utilizes the `sentiment` module, a Node.js package that uses the AFINN-165 wordlist and Emoji Sentiment Ranking to analyze text sentiment. AFINN is a list of words each assigned a valence rating between -5 (most negative) and +5 (most positive). Sentiment analysis is conducted by matching string tokens (words & emojis) to the AFINN list to obtain their scores. It returns a `comparative` score, which is `the sum of individual token scores / the number of tokens`.
 
-Alternatively, the `vader-sentiment` module can be used for sentiment analysis. VADAR (Valence Aware Dictionary and sEntiment Reasoner) calculates a `compound` score by summing and normalizing valence scores of words from its lexicon, based on established rules. The score ranges from -1 (most negative) to +1 (most positive).
+Alternatively, the `vader-sentiment` module can be used for sentiment analysis. VADER (Valence Aware Dictionary and sEntiment Reasoner) calculates a `compound` score by summing and normalizing valence scores of words from its lexicon, based on established rules. The score ranges from -1 (most negative) to +1 (most positive).
 
 ### Performance Comparison ###
 During testing, `sentiment` outperforms `vader-sentiment` in emoji analysis. Here are some results:
