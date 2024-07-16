@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import axios from 'axios';
 import Pusher from 'pusher-js';
-import ChatMessage from './ChatMessage'
+import ChatMessage from './ChatMessage';
 
 const SAD_EMOJI = [55357, 56864];
 const HAPPY_EMOJI = [55357, 56832];
@@ -42,8 +42,10 @@ function Chat(props) {
         return cleanup;
     }, []);
 
+
     const handleKeyUp = e => {
         const value = e.target.value;
+        console.log(value);
 
         if (e.keyCode === 13 && !e.shiftKey) {
             // When user presses return, construct a new message object, reset text input and make an HTTP request
@@ -53,6 +55,7 @@ function Chat(props) {
                 .catch(error => console.error('Error sending message', error));
         }
     };
+
 
     return props.activeUser && (
         <Fragment>
@@ -76,6 +79,7 @@ function Chat(props) {
                                 <div className={`d-block w-100 font-weight-bold text-dark mt-4 pb-1 px-1 text-${position}`} style={{ fontSize: '0.9rem' }}>
                                     <span className="d-block" style={{ fontSize: '1.6rem' }}>
                                         {String.fromCodePoint(...mood)}
+                                        {console.log(chat.sentiment)}
                                     </span>
                                     <span>{chat.user || 'Anonymous'}</span>
                                 </div>
