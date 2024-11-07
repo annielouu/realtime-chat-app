@@ -50,7 +50,7 @@ npm run dev
     1) Analyzes the message's sentiment using the `sentiment` module;
     2) Constructs and sends back a new object containing `user`, `content`, `timestamp`, and `sentiment`;
     3) Appends the message in the server-side data structrue `chatHistory`;
-    4) Users Pusher to trigger the `new-message` event on the `chat-room` channel
+    4) Uses Pusher to trigger the `new-message` event on the `chat-room` channel
 5. On the client side, Pusher listens for `new-message` events and updates the `chats` state with the new message.
 6. Messages are displayed, along with user names an Emojis showing message sentiment.
 
@@ -58,7 +58,7 @@ npm run dev
 - `POST /message` - Send a new message
 - `POST /messages` - Fetch all messages
 
-## Seletion of Sentiment Analysis Model
+## Selection of Sentiment Analysis Model
 
 The app utilizes the `sentiment` module, a Node.js package that uses the AFINN-165 wordlist and Emoji Sentiment Ranking to analyze text sentiment. AFINN is a list of words each assigned a valence rating between -5 (most negative) and +5 (most positive). Sentiment analysis is conducted by matching string tokens (words & emojis) to the AFINN list to obtain their scores. It returns a `comparative` score, which is `the sum of individual token scores / the number of tokens`.
 
